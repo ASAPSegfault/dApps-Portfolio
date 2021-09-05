@@ -102,3 +102,17 @@ dist
 
 # TernJS port file
 .tern-port
+
+multiSigWallet/back/build/
+
+multiSigWallet/back/node_modules/
+
+multiSigWallet/back/package-lock.json
+
+multiSigWallet/back/.secret.json
+
+multiSigWallet/client/package-lock.json
+
+multiSigWallet/client/node_modules
+
+multiSigWallet/client/yarn.lock
