@@ -4,7 +4,7 @@ import "@openzeppelin/contracts/interfaces/IERC20.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/utils/math/SignedSafeMath.sol";
 
-contract Eldoradex {
+contract EldoraDex {
 
     using SafeMath for uint;
     using SignedSafeMath for int;
