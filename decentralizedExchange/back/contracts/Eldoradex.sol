@@ -191,6 +191,21 @@ contract Eldoradex {
         }
     }
 
+    function getOrders(Side side, bytes32 ticker) external view returns(Order[] memory) {
+        return orderBook[ticker][uint(side)];
+    }
+
+    function getTokens() external view returns(Token[] memory) {
+      Token[] memory _tokens = new Token[](tokensList.length);
+      for (uint i = 0; i < tokensList.length; i++) {
+        _tokens[i] = Token(
+          tokens[tokensList[i]].ticker,
+          tokens[tokensList[i]].tokenAddress
+        );
+      }
+      return _tokens;
+    }
+
     function sort(Order[] storage orders) internal returns(Order[] storage) {
        quickSort(orders, int(0), int(orders.length - 1));
        return orders;
