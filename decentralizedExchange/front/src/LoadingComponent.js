@@ -30,11 +30,15 @@ function LoadingContainer() {
         return <div>Loading...</div>
     }
 
+    console.log(contracts)
+    console.log(accounts)
+    console.log(web3)
+
     return (
         <App
         web3 = {web3}
-        contracts = {contracts}
         accounts = {accounts}
+        contracts = {contracts}
         />
     )
 }
