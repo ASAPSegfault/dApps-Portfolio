@@ -25,7 +25,7 @@ function Header({
                 </div>
                 <div className="col-sm-9">
                     <h1 className="header-title">
-                        EldoraDex - 
+                        EldoraDex -  
                         <span className="contract-address">
                             Contract Address : 
                             <span className="address">

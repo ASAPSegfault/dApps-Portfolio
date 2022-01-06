@@ -11,6 +11,7 @@ const getWeb3 = () => {
           const web3 = new Web3(window.ethereum);
           try {
             // Request account access if needed
+            console.log("Resolving classic web3")
             await window.ethereum.enable();
             // Acccounts now exposed
             resolve(web3);
@@ -41,17 +42,13 @@ const getWeb3 = () => {
   const getContractsInstances = async web3 => {
     const networkId = await web3.eth.net.getId();
     const deployedNetwork = EldoraDex.networks[networkId];
-    
-    if (!deployedNetwork) {
-        return false;
-    }
 
     const dex = new web3.eth.Contract(
         EldoraDex.abi,
-        deployedNetwork && deployedNetwork.address
+        deployedNetwork && deployedNetwork.address,
     );
 
-    const tokens = await dex.methods.getTokens.call();
+    const tokens = await dex.methods.getTokens().call();
     const tokenContracts = tokens.reduce((accumulator, token) => ({
         ...accumulator, [web3.utils.hexToUtf8(token.ticker)]: new web3.eth.Contract(
             ERC20Abi,
