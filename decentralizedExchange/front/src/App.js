@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Header from './Header.js';
 import Footer from './Footer.js';
+import AllOrders from "./AllOrdersComponent.js";
 import NewOrder from "./NewOrderComponent.js";
 import Wallet from './WalletComponent.js';
 
@@ -20,9 +21,25 @@ function App({web3, accounts, contracts}) {
     }
   });
   const [tokens, setTokens] = useState([]);
+  const [orders, setOrders] = useState({
+    buy: [],
+    sell: []
+  });
 
   const selectToken = token => {
     setUser({...user, selectedToken: token})
+  }
+
+  const getOrders = async token => {
+    const orders = await Promise.all([
+      contracts.dex.methods
+        .getOrders(ORDER_SIDE.BUY, web3.utils.fromAscii(token.ticker))
+        .call(),
+      contracts.dex.methods
+        .getOrders(ORDER_SIDE.SELL, web3.utils.fromAscii(token.ticker))
+        .call(),
+    ]);
+    return {buy: orders[0], sell: orders[1]};
   }
 
   const getTokensBalances = async (account, token) => {
@@ -69,6 +86,8 @@ function App({web3, accounts, contracts}) {
       amount,
       price
     ).send({from : user.accounts[0]});
+    const orders = await getOrders(user.selectedToken);
+    setOrders(orders);
   }
 
   const createMarketOrder = async (side, amount) => {
@@ -77,6 +96,8 @@ function App({web3, accounts, contracts}) {
       web3.utils.fromAscii(user.selectedToken.ticker),
       amount
     ).send({from : user.accounts[0]});
+    const orders = await getOrders(user.selectedToken);
+    setOrders(orders);
   }
 
   useEffect(() => {
@@ -87,12 +108,25 @@ function App({web3, accounts, contracts}) {
         ticker: web3.utils.hexToUtf8(token.ticker)
       }));
       const tokenBalances = await getTokensBalances(accounts[0], tokens[0]);
-
+      const orders = await getOrders(tokens[0]);
       setTokens(tokens);
       setUser({accounts, selectedToken: tokens[0], tokenBalances});
+      setOrders(orders);
     }
     init();
   }, []);
+
+  useEffect(() => {
+    const init = async() => {
+      const tokenBalances = await getTokensBalances(accounts[0], user.selectedToken);
+      const orders = await getOrders(user.selectedToken);
+      setUser(user => ({...user, tokenBalances}));
+      setOrders(orders);
+    }
+    if (typeof user.selectedToken !== 'undefined') {
+      init();
+    }
+  }, [user.selectedToken]);
 
   if (typeof user.selectedToken === 'undefined') {
     return <div>Loading...</div>;
@@ -120,8 +154,20 @@ function App({web3, accounts, contracts}) {
                 createMarketOrder={createMarketOrder}
               />
             )
-            : null}
+            : null }
           </div>
+          {user.selectedToken.ticker != 'EDAI' ? (
+            <div className="col-sm-8">
+              <AllOrders
+                orders = {orders}
+              />
+            </div>
+          ) : null}
+          {user.selectedToken.ticker == 'EDAI' ? (
+          <div className="col-sm-8">
+              EDAI is used as the quote currency on this exchange. You cannot trade it.
+                  
+              </div> ) : null }
         </div>
       </main>
       <Footer />
