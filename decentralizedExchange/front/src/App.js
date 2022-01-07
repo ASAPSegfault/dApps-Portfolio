@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Header from './Header.js';
 import Footer from './Footer.js';
+import NewOrder from "./NewOrderComponent.js";
 import Wallet from './WalletComponent.js';
+
+const ORDER_SIDE = {
+  BUY: 0,
+  SELL : 1
+};
 
 function App({web3, accounts, contracts}) {
   
@@ -56,6 +62,23 @@ function App({web3, accounts, contracts}) {
     setUser(user => ({...user, tokenBalances}));
   }
 
+  const createLimitOrder = async (side, amount, price) => {
+    await contracts.dex.methods.createLimitOrder(
+      side, 
+      web3.utils.fromAscii(user.selectedToken.ticker),
+      amount,
+      price
+    ).send({from : user.accounts[0]});
+  }
+
+  const createMarketOrder = async (side, amount) => {
+    await contracts.dex.methods.createMarketOrder(
+      side, 
+      web3.utils.fromAscii(user.selectedToken.ticker),
+      amount
+    ).send({from : user.accounts[0]});
+  }
+
   useEffect(() => {
     const init = async() => {
       const nonReadableTokens = await contracts.dex.methods.getTokens().call();
@@ -63,8 +86,6 @@ function App({web3, accounts, contracts}) {
         ...token,
         ticker: web3.utils.hexToUtf8(token.ticker)
       }));
-      console.log("Here")
-      console.log(tokens[0])
       const tokenBalances = await getTokensBalances(accounts[0], tokens[0]);
 
       setTokens(tokens);
@@ -77,8 +98,6 @@ function App({web3, accounts, contracts}) {
     return <div>Loading...</div>;
   }
   
-console.log(user)
-
   return (
     <div id="app">
       <Header
@@ -95,6 +114,13 @@ console.log(user)
               deposit = {deposit}
               withdraw = {withdraw}
             />
+            {user.selectedToken.ticker !== 'EDAI' ? (
+              <NewOrder
+                createLimitOrder={createLimitOrder}
+                createMarketOrder={createMarketOrder}
+              />
+            )
+            : null}
           </div>
         </div>
       </main>
