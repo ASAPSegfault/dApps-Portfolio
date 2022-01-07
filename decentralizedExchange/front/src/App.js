@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from './Header.js';
 import Footer from './Footer.js';
 import AllOrders from "./AllOrdersComponent.js";
+import MyOrders from "./MyOrdersComponent.js";
 import NewOrder from "./NewOrderComponent.js";
 import Wallet from './WalletComponent.js';
 
@@ -160,6 +161,16 @@ function App({web3, accounts, contracts}) {
             <div className="col-sm-8">
               <AllOrders
                 orders = {orders}
+              />
+              <MyOrders
+                orders = {{
+                  buy: orders.buy.filter(
+                    order => order.trader.toLowerCase() === user.accounts[0].toLowerCase()
+                  ),
+                  sell: orders.sell.filter(
+                    order => order.trader.toLowerCase() === user.accounts[0].toLowerCase()
+                  )
+                }}
               />
             </div>
           ) : null}
