@@ -1,0 +1,37 @@
+{
+    "name" : "Barad-dûr",
+    "description": "Barad-dûr, also called the Dark Tower, is a fictional place in J. R. R. Tolkien's Middle-earth writings and is described in The Lord of the Rings, The Silmarillion, and other works. It is an enormous fortress of the Dark Lord Sauron and capital of his barren land of Mordor. Located in northwest Mordor, near Mount Doom, the Eye of Sauron keeps watch over Middle-earth from its highest tower.",
+    "image" : "https://ipfs.io/ipfs/QmTn67K9EJsDbqZUFDMVw3bkEgj3d5hAD1iw3Loqs5Ax6B",
+    "attributes": [
+        {
+            "trait_type": "Influence",
+            "value": 10,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Income",
+            "value": 8,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Fortifications",
+            "value": 10,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Garrison",
+            "value": 10,
+            "max_value": 10
+        },
+        {
+            "display_type" : "boost_percentage",
+            "trait_type": "Garrison",
+            "value": "25"
+        },
+        {
+            "display_type" : "boost_number",
+            "trait_type": "Influence",
+            "value": "1"
+        }
+    ]
+}
