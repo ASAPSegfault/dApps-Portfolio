@@ -1,6 +1,6 @@
 // contracts/GameItem.sol
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.1;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
@@ -12,7 +12,7 @@ contract LOTRNFT is ERC721URIStorage {
 
     constructor(string memory _nftName, string memory _symbol) ERC721(_nftName, _symbol) {}
 
-    function awardItem(string memory tokenURI)
+    function mint(string memory tokenURI)
         public
         returns (uint256)
     {
