@@ -1,0 +1,37 @@
+{
+    "name" : "Aragorn",
+    "description": "Aragorn is a fictional character and a main protagonist in J. R. R. Tolkien's The Lord of the Rings. Aragorn was a Ranger of the North, first introduced with the name Strider and later revealed to be the heir of Isildur, King of Arnor and Gondor. He was a confidant of Gandalf and part of the quest to destroy the One Ring and defeat the Dark Lord Sauron. He fell in love with the immortal elf Arwen, as told in The Tale of Aragorn and Arwen; her father, Elrond, forbade them to marry unless Aragorn became King of both Arnor and Gondor. ",
+    "image" : "https://ipfs.io/ipfs/QmYWkpKz3qukZsrHNsrvXnjzNtxvEBjUPjYUQU7rCpgfhD/aragorn.jpg",
+    "attributes": [
+        {
+            "trait_type": "Strength",
+            "value": 8,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Dexterity",
+            "value": 9,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Intelligence",
+            "value": 8,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Speed",
+            "value": 7,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Resilience",
+            "value": 8,
+            "max_value": 10
+        },
+        {
+            "display_type" : "boost_percentage",
+            "trait_type": "Resilience",
+            "value": "10"
+        }
+    ]
+}

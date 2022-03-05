@@ -1,0 +1,32 @@
+{
+    "name" : "Boromir",
+    "description": "Boromir is a fictional character in J. R. R. Tolkien's legendarium. He was the heir of Denethor II (the 26th Ruling Steward of Gondor) and the elder brother of Faramir. In the course of the story Boromir joined the Fellowship of the Ring.",
+    "image" : "https://ipfs.io/ipfs/QmYWkpKz3qukZsrHNsrvXnjzNtxvEBjUPjYUQU7rCpgfhD/boromir.jpg",
+    "attributes": [
+        {
+            "trait_type": "Strength",
+            "value": 8,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Dexterity",
+            "value": 7,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Intelligence",
+            "value": 7,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Speed",
+            "value": 7,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Resilience",
+            "value": 3,
+            "max_value": 10
+        }
+    ]
+}

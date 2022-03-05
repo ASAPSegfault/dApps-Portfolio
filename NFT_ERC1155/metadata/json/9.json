@@ -1,0 +1,37 @@
+{
+    "name" : "Sam",
+    "description": "Samwise Gamgee is a fictional character in J. R. R. Tolkien's Middle-earth. A hobbit, Samwise is the chief supporting character of The Lord of the Rings, serving as the sidekick of Frodo Baggins. Sam is a member of the Fellowship of the Ring, the group of nine charged with destroying the One Ring to prevent the Dark Lord Sauron from taking over the world.",
+    "image" : "https://ipfs.io/ipfs/QmYWkpKz3qukZsrHNsrvXnjzNtxvEBjUPjYUQU7rCpgfhD/sam.jpg",
+    "attributes": [
+        {
+            "trait_type": "Strength",
+            "value": 3,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Dexterity",
+            "value": 6,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Intelligence",
+            "value": 6,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Speed",
+            "value": 5,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Resilience",
+            "value": 10,
+            "max_value": 10
+        },
+        {
+            "display_type" : "boost_percentage",
+            "trait_type": "Resilience",
+            "value": "25"
+        }
+    ]
+}

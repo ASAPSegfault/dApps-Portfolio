@@ -1,0 +1,32 @@
+{
+    "name" : "Merry",
+    "description": "Meriadoc Brandybuck, usually called Merry, is a Hobbit, a fictional character from J. R. R. Tolkien's Middle-earth legendarium. Merry is described as one of the closest friends of Frodo Baggins, the main protagonist.",
+    "image" : "https://ipfs.io/ipfs/QmYWkpKz3qukZsrHNsrvXnjzNtxvEBjUPjYUQU7rCpgfhD/merry.jpg",
+    "attributes": [
+        {
+            "trait_type": "Strength",
+            "value": 3,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Dexterity",
+            "value": 7,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Intelligence",
+            "value": 4,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Speed",
+            "value": 6,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Resilience",
+            "value": 4,
+            "max_value": 10
+        }
+    ]
+}

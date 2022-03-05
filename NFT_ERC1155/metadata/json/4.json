@@ -1,0 +1,37 @@
+{
+    "name" : "Gandalf",
+    "description": "Gandalf is a protagonist in J. R. R. Tolkien's novels The Hobbit and The Lord of the Rings. He is a wizard, one of the Istari order, and the leader and mentor of the Fellowship of the Ring.",
+    "image" : "https://ipfs.io/ipfs/QmYWkpKz3qukZsrHNsrvXnjzNtxvEBjUPjYUQU7rCpgfhD/gandalf.jpg",
+    "attributes": [
+        {
+            "trait_type": "Strength",
+            "value": 8,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Dexterity",
+            "value": 5,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Intelligence",
+            "value": 10,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Speed",
+            "value": 5,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Resilience",
+            "value": 7,
+            "max_value": 10
+        },
+        {
+            "display_type" : "boost_percentage",
+            "trait_type": "Intelligence",
+            "value": "15"
+        }
+    ]
+}

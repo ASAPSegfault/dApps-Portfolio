@@ -1,0 +1,37 @@
+{
+    "name" : "Gimli",
+    "description": "Gimli is a fictional character from J. R. R. Tolkien's Middle-earth legendarium, featured in The Lord of the Rings. A dwarf warrior, he is the son of Glóin, a member of Thorin's company in Tolkien's earlier book The Hobbit. Gimli is chosen to represent the race of Dwarves as part of the Fellowship of the Ring. As such, he is one of the primary characters of the novel. In the course of the adventure, Gimli aids the Ring-bearer Frodo Baggins, participates in the War of the Ring, and becomes close friends with Legolas, overcoming an ancient enmity of Dwarves and Elves. ",
+    "image" : "https://ipfs.io/ipfs/QmYWkpKz3qukZsrHNsrvXnjzNtxvEBjUPjYUQU7rCpgfhD/gimli.jpg",
+    "attributes": [
+        {
+            "trait_type": "Strength",
+            "value": 9,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Dexterity",
+            "value": 5,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Intelligence",
+            "value": 5,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Speed",
+            "value": 4,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Resilience",
+            "value": 10,
+            "max_value": 10
+        },
+        {
+            "display_type" : "boost_percentage",
+            "trait_type": "Resilience",
+            "value": "10"
+        }
+    ]
+}

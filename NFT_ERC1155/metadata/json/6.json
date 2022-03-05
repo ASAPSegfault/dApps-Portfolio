@@ -1,0 +1,37 @@
+{
+    "name" : "Legolas",
+    "description": "Legolas is a fictional character in J. R. R. Tolkien's The Lord of the Rings. He is a Sindar Elf of the Woodland Realm and one of the nine members of the Fellowship who set out to destroy the One Ring. He and the Dwarf Gimli are close friends. ",
+    "image" : "https://ipfs.io/ipfs/QmYWkpKz3qukZsrHNsrvXnjzNtxvEBjUPjYUQU7rCpgfhD/legolas.jpg",
+    "attributes": [
+        {
+            "trait_type": "Strength",
+            "value": 9,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Dexterity",
+            "value": 10,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Intelligence",
+            "value": 8,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Speed",
+            "value": 8,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Resilience",
+            "value": 9,
+            "max_value": 10
+        },
+        {
+            "display_type" : "boost_percentage",
+            "trait_type": "Dexterity",
+            "value": "25"
+        }
+    ]
+}

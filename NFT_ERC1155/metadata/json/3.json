@@ -1,0 +1,37 @@
+{
+    "name" : "Frodo",
+    "description": "Frodo Baggins is a fictional character in J. R. R. Tolkien's writings, and one of the protagonists in The Lord of the Rings. Frodo is a hobbit of the Shire who inherits the One Ring from his cousin Bilbo Baggins and undertakes the quest to destroy it in the fires of Mount Doom in Mordor.",
+    "image" : "https://ipfs.io/ipfs/QmYWkpKz3qukZsrHNsrvXnjzNtxvEBjUPjYUQU7rCpgfhD/frodo.jpg",
+    "attributes": [
+        {
+            "trait_type": "Strength",
+            "value": 3,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Dexterity",
+            "value": 7,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Intelligence",
+            "value": 6,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Speed",
+            "value": 5,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Resilience",
+            "value": 10,
+            "max_value": 10
+        },
+        {
+            "display_type" : "boost_percentage",
+            "trait_type": "Resilience",
+            "value": "25"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "name" : "Pippin",
+    "description": "Peregrin Took, commonly known simply as Pippin, is a fictional character from J. R. R. Tolkien's fantasy novel The Lord of the Rings. He is closely tied with his friend and cousin, Merry Brandybuck.",
+    "image" : "https://ipfs.io/ipfs/QmYWkpKz3qukZsrHNsrvXnjzNtxvEBjUPjYUQU7rCpgfhD/pippin.jpg",
+    "attributes": [
+        {
+            "trait_type": "Strength",
+            "value": 3,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Dexterity",
+            "value": 7,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Intelligence",
+            "value": 4,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Speed",
+            "value": 6,
+            "max_value": 10
+        },
+        {
+            "trait_type": "Resilience",
+            "value": 4,
+            "max_value": 10
+        }
+    ]
+}
