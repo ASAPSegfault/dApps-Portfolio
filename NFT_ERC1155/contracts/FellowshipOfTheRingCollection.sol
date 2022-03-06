@@ -34,7 +34,7 @@ contract FellowshipOfTheRingCollection is ERC1155, Ownable {
         );
     }
 
-    function burn(address _from, uint256 _tokenId, uint256 _amount) public {
+    function burn(address _from, uint256 _tokenId, uint256 _amount) public onlyOwner {
         _burn(_from, _tokenId, _amount);
     }
 }
