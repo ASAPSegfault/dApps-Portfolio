@@ -1,15 +1,14 @@
-# Basic Sample Hardhat Project
+# NFT_ERC1155 Contract And Visualiser
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This project features a contract that has been used to create the Fellowship Of The Ring NFTs collection.
+It makes use of OpenZeppelin contracts interfaces in order to have battle-tested code handling our precious NFTs.
+It also comes with an NFT Visualiser where you can see each of NFT of the collection, along with their attributes.
+You can also visualise them on OpenSea.
 
-Try running some of the following tasks:
+The project has been set up and deployed with Hardhat.
+Metadata is pulled from the blockchain whereas NFT actual data (name, description, attributes...) is pulled from IPFS.
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+In order to use the NFT Visualiser, you must have Metamask installed on your browser or, if you have Brave browser, the internal wallet that is used inside the browser.
+Contract address : https://mumbai.polygonscan.com/address/0x6e7441ec2488FF46B43F4Ff7EACC4Ad9780296B4
+NFT Visualiser frontend (hosted on Netlify) : 
+OpenSea collection page : https://testnets.opensea.io/collection/fellowshipoftheringcollection
