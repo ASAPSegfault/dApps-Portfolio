@@ -1,11 +1,17 @@
 import styled from "styled-components"
 import { NftPopupImage } from "./NFTCard";
+import { NFTProgressBar } from "./NFTProgressBar";
+
+/*
+* NFT Popup Component
+* * Displays the popup with NFT details inside 
+*/
 
 const NFTPopup = (props) => {
     let nft = props.nft;
     return (
-      <Popup>
-        <PopupContent>
+      <Popup onClick={ () => props.togglePopup()}>
+        <PopupContent onClick={ (event) => event.stopPropagation()}>
           <PopupGrid>
             <NftPopupImage style={{ backgroundImage: `url(${nft && nft.image})`}}/>
             <div>
@@ -28,14 +34,18 @@ const NFTPopup = (props) => {
                 nft.attributes ? 
                 nft.attributes.map((attr, index) => 
                   <div key={index}>
-                    <AttributeContainer>
-                      <AttributeText>
-                        { attr.trait_type }
-                      </AttributeText>
-                      <AttributeText style= {{float: "right"}}>
-                        { attr.value }
-                      </AttributeText>
-                    </AttributeContainer>
+                    {
+                        attr.display_type ? "" :
+                        <AttributeContainer>
+                        <AttributeText>
+                          { attr.trait_type }
+                        </AttributeText>
+                        <AttributeText style={{float: "right"}}>
+                          { attr.value }
+                        </AttributeText>
+                        <NFTProgressBar percent={attr.value * 10} hasExcess={ attr.display_type ? true : false }/>
+                      </AttributeContainer>
+                    }
                   </div>
                 ) : ""
               }
@@ -69,6 +79,9 @@ const PopupContent = styled.div`
   padding: 20px;
   border-radius: 20px;
   background-color: white;
+  @media(max-width: 900px) {
+    width: 400px; 
+  }
 `
 
 const PopupTitle = styled.h1`
@@ -86,6 +99,9 @@ const PopupGrid = styled.div`
   display: inline-grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 40px;
+  @media(max-width: 900px) {
+    grid-template-columns: 1fr;
+  } 
 `
 
 const CloseBtn = styled.span`

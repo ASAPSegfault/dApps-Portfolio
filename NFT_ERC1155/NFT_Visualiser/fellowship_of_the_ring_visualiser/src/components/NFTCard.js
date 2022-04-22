@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+/*
+* NFT Card Component
+* * Displays the card component used in the grid
+*/
+
 const NFTCard = (props) => {
   let nft = props.nft;
 

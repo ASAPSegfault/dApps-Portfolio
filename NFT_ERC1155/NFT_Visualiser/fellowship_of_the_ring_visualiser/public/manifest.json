@@ -1,0 +1,8 @@
+{
+  "short_name": "Fellowship Visualiser",
+  "name": "Felloswhip of the Ring Visualiser",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
