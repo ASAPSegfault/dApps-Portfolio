@@ -6,6 +6,7 @@
     margin-bottom: 0;
     font-size: 1rem;
     line-height: 38px;
+    font-size: xx-large;
   }
   .contract-address {
     color: $dimWhite; 
@@ -13,5 +14,11 @@
     .contract-address .address {
       font-family: 'Courier';
     }
+    margin-left: 5%;
+  }
+
+  .title-container {
+    margin-top: auto;
+    margin-bottom: auto;
   }
 }

@@ -5,7 +5,8 @@ function Header({
     user,
     tokens,
     contracts,
-    selectToken
+    selectToken,
+    web3
 }) {
     return (
         <header id="header" className="card">
@@ -21,11 +22,14 @@ function Header({
                             value: user.selectedToken
                         }}
                         onSelect={selectToken}
+                        user={user}
+                        contracts={contracts}
+                        web3={web3}
                     />
                 </div>
-                <div className="col-sm-9">
+                <div className="col-sm-9 title-container">
                     <h1 className="header-title">
-                        EldoraDex -  
+                        EldoraDEX 
                         <span className="contract-address">
                             Contract Address : 
                             <span className="address">

@@ -1,6 +1,10 @@
 import Web3 from 'web3';
 import EldoraDex from './contracts/EldoraDex.json';
 import ERC20Abi from './ERC20Abi.json';
+import EldoraBAT from './contracts/EldoraBAT.json'
+import EldoraDAI from './contracts/EldoraDAI.json'
+import EldoraGOLEM from './contracts/EldoraGOLEM.json'
+import EldoraLINK from './contracts/EldoraLINK.json'
 
 const getWeb3 = () => {
     return new Promise((resolve, reject) => {
@@ -42,6 +46,18 @@ const getWeb3 = () => {
   const getContractsInstances = async web3 => {
     const networkId = await web3.eth.net.getId();
     const deployedNetwork = EldoraDex.networks[networkId];
+    const tokenContractsMap = new Map();
+    const tokenContractsNetworkMap = new Map();
+
+    tokenContractsMap.set('EBAT', EldoraBAT.abi);
+    tokenContractsMap.set('EDAI', EldoraBAT.abi);
+    tokenContractsMap.set('EGNT', EldoraBAT.abi);
+    tokenContractsMap.set('ELINK', EldoraBAT.abi);
+
+    tokenContractsNetworkMap.set('EBAT', EldoraBAT.networks[networkId])
+    tokenContractsNetworkMap.set('EDAI', EldoraDAI.networks[networkId])
+    tokenContractsNetworkMap.set('EGNT', EldoraGOLEM.networks[networkId])
+    tokenContractsNetworkMap.set('ELINK', EldoraLINK.networks[networkId])
 
     const dex = new web3.eth.Contract(
         EldoraDex.abi,
@@ -51,10 +67,11 @@ const getWeb3 = () => {
     const tokens = await dex.methods.getTokens().call();
     const tokenContracts = tokens.reduce((accumulator, token) => ({
         ...accumulator, [web3.utils.hexToUtf8(token.ticker)]: new web3.eth.Contract(
-            ERC20Abi,
-            token.tokenAddress
+            tokenContractsMap.get(web3.utils.hexToUtf8(token.ticker)),
+            tokenContractsNetworkMap.get(web3.utils.hexToUtf8(token.ticker)).address
         )
     }), {});
+
     return {dex, ...tokenContracts};
 }
 
