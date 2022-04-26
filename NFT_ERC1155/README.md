@@ -10,6 +10,6 @@ Metadata is pulled from the blockchain whereas NFT actual data (name, descriptio
 
 In order to use the NFT Visualiser, you must have Metamask installed on your browser or, if you have Brave browser, the internal wallet that is used inside the browser.
 
-NFT Visualiser frontend (hosted on Netlify) : https://flourishing-creponne-4e18d7.netlify.app/
-Contract address : https://mumbai.polygonscan.com/address/0x6e7441ec2488FF46B43F4Ff7EACC4Ad9780296B4
-OpenSea collection page : https://testnets.opensea.io/collection/fellowshipoftheringcollection
+NFT Visualiser frontend (hosted on Netlify) : https://flourishing-creponne-4e18d7.netlify.app/<br/>
+Contract address : https://mumbai.polygonscan.com/address/0x6e7441ec2488FF46B43F4Ff7EACC4Ad9780296B4<br/>
+OpenSea collection page : https://testnets.opensea.io/collection/fellowshipoftheringcollection<br/>
