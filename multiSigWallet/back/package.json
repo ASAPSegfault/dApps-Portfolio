@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@openzeppelin/test-helpers": "^0.5.11",
-    "@truffle/hdwallet-provider": "^1.5.0",
+    "@truffle/hdwallet-provider": "^2.0.0",
     "bn.js": "^5.2.0"
   },
   "devDependencies": {
